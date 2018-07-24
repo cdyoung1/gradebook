@@ -32,7 +32,7 @@ $('#student-input').on('submit',function(e){
   const newRow = createNewRow(data);
   studentBody.append(newRow);
   avgGrade();
-  $('#avg').html('Avg:' + `${avggrade}`);
+  $('#avg').html('Avg: ' + `${avggrade}` + '%');
 });
 
 $('#delete-btn').on('click',function(){
@@ -47,7 +47,7 @@ $('#delete-btn').on('click',function(){
   }
   checkedRows.remove();
   avgGrade();
-  $('#avg').html('Avg:' + `${avggrade}`);
+  $('#avg').html(`Avg: ${avggrade}` + '%');
 });
 
 function avgGrade(){
@@ -63,3 +63,13 @@ function avgGrade(){
 $('#select-all-checkbox').click(function(){
   $('.rowCheck').prop('checked',$(this).prop('checked'));
 });
+
+function sortTable(n){
+  let table, a, b, shouldSwitch, rows, dir, switchCount=0;
+  dir = 'asc';
+  rows=$('#grade-table-body tr');
+  for(let i = 0; i<table.length-1;i++){
+      x=rows.find('td').get(1);
+      y=rows.find('td').get(2);
+  }
+}

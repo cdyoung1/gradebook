@@ -9,7 +9,7 @@ test('adding Content', async t => {
     const passColor = (parseInt(data.grade)>=70) ? "green" : "red";
     const gradeCell = Selector('dataGrade');
     await t
-        .typeText('#form-name', 'LASKJLASDKJASLDJK')
+        .typeText('#form-name', 'John Smith')
         .typeText('#form-grade','75')
         .click('#submit-btn')
 

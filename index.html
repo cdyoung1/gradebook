@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
   <form id=student-input>
     <input type="text" placeholder="Name" name="name" id="form-name"/>
     <input type="number" placeholder="Grade" name="grade" id="form-grade"/>
@@ -19,8 +20,8 @@
     <thead id="grade-table-head">
       <tr>
         <th><input type="checkbox" id="select-all-checkbox" id="select-all-checkbox"/></th>
-        <th id="table-name">Name</th>
-        <th id="table-grade">Grade</th>
+        <th id="table-name" onclick="sortTable(1)">Name</th>
+        <th id="table-grade" onclick="sortTable(2)">Grade</th>
       </tr>
     </thead>
     <tfoot id="grade-table-footer">
