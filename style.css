@@ -1,0 +1,24 @@
+*{
+    box-sizing:border-box;
+  }
+  #grade-table{ 
+    border-collapse:collapse;
+    margin-top:20px;
+  }
+  #grade-table th, td{
+    padding:5px;
+    border:1px solid blue;
+    text-align:center;
+  }
+  #table-name{
+    width:275px;
+  }
+  #table-grade{
+    width:75px;
+  }
+  .green{
+    background: #47cf73;
+  }
+  .red{
+    background: #ff3c41;
+  }

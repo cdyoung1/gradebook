@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Gradebook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <form id=student-input>
+    <input type="text" placeholder="Name" name="name" id="form-name"/>
+    <input type="number" placeholder="Grade" name="grade" id="form-grade"/>
+    <input type="submit" id="submit-btn" />
+  </form>
+
+  <table id="grade-table">
+    <thead id="grade-table-head">
+      <tr>
+        <th><input type="checkbox" id="select-all-checkbox" id="select-all-checkbox"/></th>
+        <th id="table-name">Name</th>
+        <th id="table-grade">Grade</th>
+      </tr>
+    </thead>
+    <tfoot id="grade-table-footer">
+      <tr>
+        <td><button id="delete-btn" class="btn">delete</button></td>
+        <td></td>
+        <td id="avg">Avg: 0%</td>
+      </tr>
+    </tfoot>
+    <tbody id="grade-table-body"></tbody>
+  </table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>
