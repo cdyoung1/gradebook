@@ -1,0 +1,28 @@
+{
+  "name": "gradebook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdyoung1/gradebook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdyoung1/gradebook/issues"
+  },
+  "homepage": "https://github.com/cdyoung1/gradebook#readme",
+  "devDependencies": {
+    "husky": "^0.14.3"
+  },
+    "husky": {
+      "hooks": {
+        "pre-push": "testcafe chrom test.js"
+
+      }
+    }
+}

@@ -3,13 +3,15 @@ let gradeArray = [];
 let studentBody;
 const passGrade=70;
 let avggrade=0;
-
+let passColor;
+let data;
+let formData;
 function createNewRow(data){
-  const passColor = (parseInt(data.grade)>=70) ? "green" : "red";
+  passColor = (parseInt(data.grade)>=70) ? "green" : "red";
   
   return `<tr>
   <td><input type="checkbox"class="rowCheck checkRemove"></td>
-  <td>${data.name}</td>
+  <td class="data-Name">${data.name}</td>
   <td class="data-Grade ${passColor}">${data.grade}%</td>
   </tr>
   `;
@@ -21,8 +23,8 @@ $(function(){
 
 $('#student-input').on('submit',function(e){
   e.preventDefault();
-  const formData = new FormData(e.target);
-  const data = {
+  formData = new FormData(e.target);
+  data = {
     name : formData.get('name'),
     grade : formData.get('grade')
   };
@@ -33,6 +35,9 @@ $('#student-input').on('submit',function(e){
   studentBody.append(newRow);
   avgGrade();
   $('#avg').html('Avg: ' + `${avggrade}` + '%');
+  $('#student-input').each(function(){
+    this.reset();
+  })
 });
 
 $('#delete-btn').on('click',function(){
@@ -47,6 +52,7 @@ $('#delete-btn').on('click',function(){
   }
   checkedRows.remove();
   avgGrade();
+  $('#select-all-checkbox').prop('checked',false);
   $('#avg').html(`Avg: ${avggrade}` + '%');
 });
 
@@ -64,12 +70,21 @@ $('#select-all-checkbox').click(function(){
   $('.rowCheck').prop('checked',$(this).prop('checked'));
 });
 
-function sortTable(n){
-  let table, a, b, shouldSwitch, rows, dir, switchCount=0;
-  dir = 'asc';
-  rows=$('#grade-table-body tr');
-  for(let i = 0; i<table.length-1;i++){
-      x=rows.find('td').get(1);
-      y=rows.find('td').get(2);
-  }
-}
+// $('#grade-table-head > th').on('click',function(){
+    
+// })
+
+// function(n){
+//   let table, a, b, shouldSwitch, rows, dir, switchCount=0;
+//   dir = 'asc';
+//   rows=$('#grade-table-body tr');
+//   for(let i = 0; i<table.length-1;i++){
+//       x=rows[i].find('td').eq(n);
+//       y=rows[i+1].find('td').eq(n);
+//       if(x.innertHTML.toLowerCase()>y.innerHTML.toLowerCase()){
+//         let temp = x.innerHTML;
+//         rows[i].find('td').eq(n).html(y.innerHTML);
+//         rows[i+1].find('td').eq(n).html(temp);
+//       }
+//   }
+// }
